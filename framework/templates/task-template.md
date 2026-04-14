@@ -1,20 +1,18 @@
 # Task Template
 
-This file serves as a template for defining an atomic task. Each task should have a corresponding file in `project/docs/tasks/`.
-
 ---
 
-**Task ID:** [Unique identifier for the task, e.g., FT001-TG001-T001]
+**Task ID:** [Unique identifier for the task, e.g., TASK-001]
 
 **Title:** [Concise, descriptive title of the task]
 
 **Parent Feature:**
 [Reference to the feature this task belongs to.]
-*   [Feature Title/ID]
+*   [Feature ID] - [Feature Name]
 
 **Parent Task Group:**
 [Reference to the task group this task belongs to.]
-*   [Task Group Title/ID]
+*   [Task Group ID] - [Task Group Name]
 
 **Purpose:**
 [A clear, concise statement of what this task aims to achieve.]
@@ -25,7 +23,7 @@ This file serves as a template for defining an atomic task. Each task should hav
 *   [Dependency 2]
 
 **Allowed Scope:**
-[Define the specific files, directories, or components that this task is permitted to interact with or modify. This should align with `project/now/metadata.json` during execution.]
+[Define the specific files, directories, or components that this task is permitted to interact with or modify. This should align with `project/now/metadata.json` and `project/evidence/` for storing output.]
 *   `project/app/`
 *   `project/evidence/`
 
@@ -34,6 +32,7 @@ This file serves as a template for defining an atomic task. Each task should hav
 *   `project/vision/`
 *   `project/docs/`
 *   `framework/`
+*   `project/now/`
 
 **Completion Criteria:**
 [Define the specific, measurable conditions that must be met for this task to be considered complete. This should align with `project/docs/definition_of_done.md`.]
@@ -47,9 +46,8 @@ This file serves as a template for defining an atomic task. Each task should hav
 
 **Evidence Expectations:**
 [Specify what evidence of task completion should be recorded in `project/evidence/`.]
-*   [Evidence Type 1, e.g., Log files]
-*   [Evidence Type 2, e.g., Generated artifacts]
-*   [Evidence Type 3, e.g., Test run reports]
-*   [Evidence Type 4, e.g., Screenshots/recordings if applicable]
+*   [Evidence Type 1, e.g., Log files in `project/evidence/run_logs/`]
+*   [Evidence Type 2, e.g., Generated artifacts in `project/evidence/artifacts/`]
+*   [Evidence Type 3, e.g., Test run reports in `project/evidence/test_runs/`]
 
 **Status:** `pending` | `in_progress` | `completed` | `blocked` | `cancelled`

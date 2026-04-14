@@ -1,6 +1,4 @@
-# Active Work Handoff Template
-
-This file serves as a template for defining the current work item to be executed. The most current definition should be in `project/now/`.
+# Active Work Template
 
 ---
 
@@ -18,16 +16,19 @@ This file serves as a template for defining the current work item to be executed
 *   [Any specific task definition files, feature definitions, etc.]
 
 **Allowed Files:**
-[List of files and directories that the execution tool is permitted to modify or create. This should align with `metadata.json`.]
+[List of files and directories that the execution tool is permitted to modify or create. This should align with `project/now/metadata.json` and `project/evidence/` for storing output.]
 *   `project/app/`
 *   `project/evidence/`
-*   `project/now/test_runs/`
+*   `project/evidence/run_logs/`
+*   `project/evidence/test_runs/`
+*   `project/evidence/artifacts/`
 
 **Forbidden Files:**
-[List of files and directories that the execution tool must NOT modify or create. This should align with `metadata.json`.]
+[List of files and directories that the execution tool must NOT modify or create. This should align with `project/now/metadata.json`.]
 *   `project/vision/`
 *   `project/docs/`
 *   `framework/`
+*   `project/now/`
 
 **Exact Update Requirements:**
 [Specific instructions on how files are expected to be updated. This may include code snippets, expected changes, or specific file formats.]
@@ -35,14 +36,15 @@ This file serves as a template for defining the current work item to be executed
 *   [Requirement 2]
 
 **Validation Requirements:**
-[How the successful completion of this work item will be validated. This should align with `metadata.json`.]
+[How the successful completion of this work item will be validated. This should align with `project/now/metadata.json`.]
 *   [Validation Method 1]
 *   [Validation Method 2]
 
 **Evidence Requirements:**
-[What evidence of work completion must be produced and where it should be stored. This should align with `metadata.json`.]
+[What evidence of work completion must be produced and where it should be stored. This should align with `project/now/metadata.json`.]
 *   Store logs in `project/evidence/run_logs/`
 *   Store generated artifacts in `project/evidence/artifacts/`
+*   Store test runs in `project/evidence/test_runs/`
 
 **Blocked-State Instructions:**
 [Instructions for what to do if the work item becomes blocked. This typically involves updating status and potentially moving to `project/priorities/blocked.md`.]

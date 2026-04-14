@@ -1,17 +1,15 @@
 # Task Group Template
 
-This file serves as a template for defining a group of related atomic tasks that contribute to a larger feature. Each task group should have a corresponding file in `project/docs/task_groups/`.
-
 ---
 
-**Title:** [Concise, descriptive title of the task group]
+**Task Group ID:** [Unique identifier for the task group, e.g., TG-001]
 
-**Parent Feature:**
+**Linked Feature:**
 [Reference to the feature this task group belongs to. This should correspond to a file in `project/docs/features/`.]
-*   [Feature Title/ID]
+*   [Feature ID] - [Feature Name]
 
-**Objective:**
-[A clear, concise objective for this task group. What is the overarching goal of the tasks within this group?]
+**Purpose:**
+[A clear, concise statement of what this task group aims to achieve.]
 
 **Included Tasks:**
 [List the atomic tasks that comprise this task group. These should map to files in `project/docs/tasks/`.]
@@ -24,5 +22,11 @@ This file serves as a template for defining a group of related atomic tasks that
 *   [Dependency 1]
 *   [Dependency 2]
 
-**Sequencing Notes:**
-[Any specific ordering requirements or notes regarding the execution of tasks within this group.]
+**Ordering:**
+[Specify any ordering requirements or notes regarding the execution of tasks within this group.]
+
+**Risks:**
+[Identify potential risks associated with this task group and any mitigation strategies.]
+
+**Exit Condition:**
+[Define the criteria that must be met for this task group to be considered complete. This should align with `project/docs/definition_of_done.md`.]

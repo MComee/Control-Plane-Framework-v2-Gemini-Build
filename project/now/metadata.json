@@ -6,16 +6,19 @@
   "allowed_paths": [
     "project/app/",
     "project/evidence/",
-    "project/now/test_runs/"
+    "project/evidence/test_runs/",
+    "project/evidence/artifacts/"
   ],
   "forbidden_paths": [
     "project/vision/",
     "project/docs/",
-    "framework/"
+    "framework/",
+    "project/now/"
   ],
   "validation_requirements": [],
   "evidence_paths": [
     "project/evidence/run_logs/",
+    "project/evidence/test_runs/",
     "project/evidence/artifacts/"
   ]
 }
