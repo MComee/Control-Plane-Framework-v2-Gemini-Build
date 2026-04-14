@@ -1,0 +1,8 @@
+# Execution Boundaries
+
+This document defines the boundaries and expected behaviors for the execution phase of the development workflow. Adherence to these boundaries is crucial for maintaining scope control and ensuring predictable outcomes.
+
+*   **Execution Follows `project/now/prompt.md`:** The definitive guide for what needs to be executed is the content of `project/now/prompt.md`. Tools must strictly adhere to the instructions, scope, and targets specified in this file.
+*   **Execution Must Stay Inside Allowed Scope:** Tools must operate only within the paths and functionalities explicitly permitted by the active work definition. This includes respecting `allowed_paths` and `forbidden_paths` defined in `project/now/metadata.json`.
+*   **Execution Must Produce Evidence When Appropriate:** For tasks involving implementation or significant changes, the execution process must generate evidence of its work. This evidence should be recorded in `project/evidence/` and may include logs, generated files, test results, or other relevant artifacts, as specified by `evidence_paths` in `project/now/metadata.json`.
+*   **Execution Should Not Silently Expand Scope:** Tools must not add new features, modify unrelated components, or exceed the defined scope of the task without explicit authorization or a formal planning update. Any deviation or necessity for scope expansion must be flagged and handled through the planning process.

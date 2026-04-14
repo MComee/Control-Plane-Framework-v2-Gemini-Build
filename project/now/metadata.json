@@ -1,0 +1,21 @@
+{
+  "project_name": "Control-Plane-Framework-v2",
+  "lane": "development",
+  "status": "pending",
+  "task_id": "",
+  "allowed_paths": [
+    "project/app/",
+    "project/evidence/",
+    "project/now/test_runs/"
+  ],
+  "forbidden_paths": [
+    "project/vision/",
+    "project/docs/",
+    "framework/"
+  ],
+  "validation_requirements": [],
+  "evidence_paths": [
+    "project/evidence/run_logs/",
+    "project/evidence/artifacts/"
+  ]
+}
