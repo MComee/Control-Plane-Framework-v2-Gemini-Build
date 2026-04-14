@@ -1,7 +1,5 @@
-# Project App Directory
+# App
 
-This directory is designated for the implementation of the controlled project's application code and related assets.
+This directory contains project implementation files.
 
-The framework itself does not dictate the language, stack, or specific technologies used within this directory. The structure and content here are determined by the project's needs and the chosen development approach, guided by the framework's planning and control artifacts.
-
-All code and implementation details for the project reside here.
+Execution tools may modify this directory only when the active handoff explicitly allows it in `project/now/metadata.json`.

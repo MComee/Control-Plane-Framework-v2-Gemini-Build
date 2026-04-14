@@ -1,15 +1,19 @@
-# Execution Handoff Prompt
+# Active Work Prompt
 
-This file contains the machine-consumable prompt for the current bounded work item. It is the definitive source for what an execution tool should perform.
+Execute `TASK-002`.
 
-**Purpose:**
-To provide a precise, actionable instruction set for AI or automated tools to execute a specific task, ensuring scope and intent alignment.
+Required outcome:
+1. Ensure `README.md` contains a fully recursive file tree that matches all tracked files and tracked subdirectories in this repository.
+2. Verify that all paths referenced in `README.md`, `docs/`, `framework/rules/`, and `project/docs/` exist.
+3. Correct any path drift, especially priorities and evidence locations.
+4. Do not edit AI-internal policy content. This framework governs repository truth and execution alignment only.
 
-**Content:**
-This file should contain the detailed prompt, including:
-*   The specific task to be performed.
-*   Any necessary context or inputs.
-*   Expected outputs or artifacts.
-*   Constraints or specific requirements.
+Constraints:
+- Work only inside `allowed_paths` from `project/now/metadata.json`.
+- Do not modify `forbidden_paths`.
+- Keep language concise and operational.
 
-This prompt is derived from the active task definition (`project/docs/tasks/task-id.md`) and is intended for direct use by execution tools.
+Completion criteria:
+- README tree equals the current tracked repository structure.
+- No conflicting priorities or evidence surfaces remain.
+- Validation checks in metadata are satisfied.

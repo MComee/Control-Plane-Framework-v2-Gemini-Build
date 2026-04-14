@@ -1,14 +1,10 @@
 # Durable Decisions
 
-This file is a record of significant, durable decisions made throughout the project's lifecycle.
+## 2026-04-14
 
-**Purpose:**
-To provide a historical reference for key decisions that have shaped the project's direction, architecture, or implementation. This helps in maintaining consistency and avoiding repeated discussions or debates on settled matters.
-
-**Content:**
-Document decisions with:
-*   Date of decision
-*   Who made the decision (if applicable)
-*   The decision itself
-*   The rationale behind the decision
-*   The impact of the decision
+1. One repository instance controls one project under `project/`.
+2. Priorities live only at `project/docs/priorities/`.
+3. Evidence lives only at `project/evidence/`.
+4. Active handoff source is `project/now/prompt.md`.
+5. Root `README.md` must contain a fully recursive, exact tree of all tracked files and tracked subdirectories.
+6. Framework scope is repository truth and execution alignment, not AI internals.

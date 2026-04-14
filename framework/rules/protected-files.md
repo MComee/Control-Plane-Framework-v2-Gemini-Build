@@ -1,32 +1,35 @@
 # File Protection Rules
 
-This document defines classifications for files within the repository to govern their mutability during different phases of the development workflow. Adherence to these rules is critical for maintaining the integrity of project intent and execution alignment.
+This framework protects repository truth. It does not manage AI internals.
 
 ## Protected Files
 
-These files represent the core, unchangeable doctrine and definitions of the project and framework. They should **never** be modified by execution tools. Changes to these files must only occur through explicit planning and synchronization processes.
+Execution tools must not mutate these during normal execution:
 
-*   `project/vision/core_vision.md`
-*   `project/vision/constraints.md`
-*   `project/docs/features/*` (Individual feature definition files)
-*   `project/docs/task_groups/*` (Individual task group definition files)
-*   `project/docs/priorities/*` (Files defining `now`, `next`, `later`, `blocked`, `done`)
+- `project/vision/core_vision.md`
+- `project/vision/constraints.md`
+- `project/docs/features/*`
+- `project/docs/task_groups/*`
+- `project/docs/priorities/*`
 
 ## Restricted Files
 
-These files are generally stable but may be updated during explicit planning or tracking activities. Execution tools should generally avoid modifying them, but they are less strictly protected than "Protected" files.
+These are planning-controlled and should only change through explicit planning updates:
 
-*   `project/docs/tasks/*` (Individual atomic task definition files)
+- `project/docs/tasks/*`
+- `project/docs/roadmap.md`
+- `project/docs/decisions.md`
+- `project/docs/definition_of_done.md`
+- `project/docs/execution_control.md`
+- `project/now/*`
 
 ## Allowed for Normal Execution
 
-These files are mutable and are the primary targets for code implementation and evidence recording. Execution tools are generally permitted to modify these files as part of their assigned tasks.
+- `project/app/*`
+- `project/evidence/*`
 
-*   `project/app/*` (All files within the application directory)
-*   `project/evidence/` (All files within the evidence directory, used for recording results)
+## Compliance Rule
 
-## Policy Statement
-
-*   **Execution tools must not modify protected files.** Doing so is a critical failure and invalidates the trustworthiness of any execution result.
-*   **Restricted files should only change when explicitly part of planning, tracking, or approved control updates.** Changes should be deliberate and synchronized with the planning process.
-*   **Allowed files** are the primary targets for implementation and evidence, and are subject to modification by execution tools as part of their defined tasks.
+- Every path referenced in governance and control docs must exist.
+- The root `README.md` must list every tracked file and tracked subdirectory recursively and exactly.
+- Any boundary violation invalidates execution trust.

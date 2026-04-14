@@ -1,21 +1,27 @@
 {
-  "project_name": "Control-Plane-Framework-v2",
-  "lane": "development",
-  "status": "pending",
-  "task_id": "",
+  "project_name": "Control-Plane-Framework-v2-Gemini-Build",
+  "lane": "now",
+  "status": "in_progress",
+  "task_id": "TASK-002",
   "allowed_paths": [
-    "project/app/",
-    "project/evidence/",
-    "project/evidence/test_runs/",
-    "project/evidence/artifacts/"
+    "README.md",
+    "docs/",
+    "framework/rules/",
+    "framework/templates/",
+    "project/docs/",
+    "project/now/",
+    "project/evidence/"
   ],
   "forbidden_paths": [
     "project/vision/",
-    "project/docs/",
-    "framework/",
-    "project/now/"
+    "project/app/"
   ],
-  "validation_requirements": [],
+  "validation_requirements": [
+    "The README tree must include every tracked file and tracked subdirectory recursively.",
+    "All path references in governance and control docs must resolve to real repository paths.",
+    "Only one priorities location is allowed: project/docs/priorities/.",
+    "Only one evidence surface is allowed: project/evidence/."
+  ],
   "evidence_paths": [
     "project/evidence/run_logs/",
     "project/evidence/test_runs/",

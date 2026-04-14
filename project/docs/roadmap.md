@@ -1,9 +1,16 @@
-# Project Roadmap
+# Roadmap
 
-This file serves as a high-level placeholder for the phased sequencing of project work.
+## Phase 1 - Control Integrity Baseline
+- Enforce required v2 path structure
+- Remove conflicting priorities and evidence surfaces
+- Initialize active-work package
 
-**Purpose:**
-To provide a strategic overview of the project's evolution over time, outlining major milestones, phases, or releases.
+## Phase 2 - Operational Discipline
+- Keep decomposition current in features, task groups, and tasks
+- Keep priorities synchronized with active work
+- Maintain path-valid governance docs
 
-**Content:**
-This section should be populated with descriptions of project phases, their high-level objectives, and estimated timelines or key deliverables. It acts as a strategic guide, complementing the granular task tracking within other project files.
+## Phase 3 - Repeatable Validation
+- Keep boundary checks explicit
+- Keep evidence paths consistent
+- Keep README recursive file tree exact on every structural change

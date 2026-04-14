@@ -1,44 +1,46 @@
 # Control Plane Framework v2
 
-This repository is a repository-native control framework for AI-assisted software development. It governs repository truth and execution alignment, ensuring that AI tools interact predictably and contribute to a stable, controlled project state.
+Repository-native control framework for AI-assisted software development.
 
-## Core Control Model
+Scope statement:
+- Governs repository truth and execution alignment.
+- Does not govern AI internals.
+- One repository instance controls one project under `project/`.
 
-This framework operates on a three-layer model to manage AI-assisted development:
+## Core Model
 
-### Layer 1 — Framework Self-Governance
-This layer protects the framework's integrity and consistency. It defines core doctrine, routing rules, file protection policies, planning synchronization mechanisms, and execution boundaries. Its purpose is to ensure the framework itself remains stable and reusable.
+### Layer 1 - Framework Self-Governance
+Protects doctrine, routing, protected paths, planning sync, and execution boundaries.
 
-### Layer 2 — Single-Project Control
-This layer governs precisely one project under the `project/` directory. It enforces the project's vision, manages decomposition into features, task groups, and tasks, maintains priorities, tracks active work, and collects evidence. This layer ensures all development aligns with the project's defined state.
+### Layer 2 - Single-Project Control
+Governs one project under `project/`, including vision, decomposition, priorities, active work, and evidence.
 
-### Layer 3 — Execution Guidance
-This layer guides external tools (like AI assistants or local scripts) by providing context, expected behavior, scoped handoff prompts, and validation criteria. It directs tools on what to read, what they may change, and what they must not change, using `project/now/` as the primary handoff source. Critically, this layer *does not* control AI internals but rather guides their interaction with the repository.
+### Layer 3 - Execution Guidance
+Guides one chosen tool at a time through `project/now/`, with explicit allowed and forbidden scope.
 
-## How AI Tools Should Use This Repository
+## Operating Rules
 
-AI tools interacting with this repository must adhere to these principles:
+1. Planning must be synchronized to repository files.
+2. Execution must consume `project/now/description.md`, `project/now/prompt.md`, and `project/now/metadata.json`.
+3. Validation must confirm protected boundaries were respected.
+4. Priorities location is only `project/docs/priorities/`.
+5. Evidence surface is only `project/evidence/`.
 
-1.  **Repository Truth First:** Always consult repository files as the definitive source of truth for project state and requirements.
-2.  **Phase-Based Routing:** Follow the routing rules defined in `docs/routing.md` based on the operational phase (Planning, Execution Preparation, Execution, Validation).
-3.  **Respect Boundaries:** Avoid modifying protected and restricted files as defined in `framework/rules/protected-files.md`. Violations invalidate execution results.
-4.  **Clean Handoff:** Consume work instructions exclusively from `project/now/` artifacts (`description.md`, `prompt.md`, `metadata.json`).
-5.  **Stable State:** Assume repository truth is stable for the duration of an execution task.
+## Repository Visibility Compliance
 
-## Workflow
+The root `README.md` file tree below is a required control artifact.
 
-The framework supports a structured workflow:
+Requirements:
+- It must include every tracked file.
+- It must include every tracked subdirectory.
+- It must recurse fully.
+- It must exactly match repository structure.
 
-*   **Planning:** Define and refine project vision, features, decomposition, and priorities. All planning must sync to repository files.
-*   **Decomposition:** Break down features into task groups and atomic tasks.
-*   **Prioritization:** Manage tasks using `project/docs/priorities/` files.
-*   **Active Work Handoff:** Clearly define the single, bounded task to be executed next via `project/now/`.
-*   **Execution:** Perform the defined task, adhering strictly to scope.
-*   **Evidence Return:** Record execution outcomes and artifacts in `project/evidence/`.
+If tracked files are added, removed, moved, or renamed, this tree must be updated in the same change set.
 
-## Repository File Tree
+## Full Recursive File Tree
 
-```
+```text
 .
 ├── README.md
 ├── docs
@@ -59,12 +61,12 @@ The framework supports a structured workflow:
 ├── project
 │   ├── app
 │   │   └── README.md
-│   ├── decisions.md
-│   ├── definition_of_done.md
 │   ├── docs
+│   │   ├── decisions.md
+│   │   ├── definition_of_done.md
+│   │   ├── execution_control.md
 │   │   ├── features
-│   │   │   └── README.md
-│   │   ├── task_groups
+│   │   │   ├── FEAT-001-repository-truth-control.md
 │   │   │   └── README.md
 │   │   ├── priorities
 │   │   │   ├── blocked.md
@@ -73,63 +75,29 @@ The framework supports a structured workflow:
 │   │   │   ├── next.md
 │   │   │   └── now.md
 │   │   ├── roadmap.md
-│   │   ├── tasks
-│   │   │   └── README.md
-│   │   └── execution_control.md
+│   │   ├── task_groups
+│   │   │   ├── README.md
+│   │   │   └── TG-001-structural-compliance-and-active-work-control.md
+│   │   └── tasks
+│   │       ├── README.md
+│   │       ├── TASK-001-normalize-v2-structure-and-control-locations.md
+│   │       ├── TASK-002-enforce-readme-tree-and-path-compliance.md
+│   │       └── TASK-003-keep-active-work-bounded-and-actionable.md
 │   ├── evidence
 │   │   ├── .gitkeep
-│   │   └── README.md
-│   ├── now
+│   │   ├── README.md
 │   │   ├── artifacts
-│   │   │   ├── .gitkeep
-│   │   │   └── README.md
-│   │   ├── description.md
-│   │   ├── evidence
-│   │   │   └── README.md
-│   │   ├── metadata.json
-│   │   ├── prompt.md
+│   │   │   └── .gitkeep
+│   │   ├── run_logs
+│   │   │   └── .gitkeep
 │   │   └── test_runs
-│   │       ├── .gitkeep
-│   │       └── README.md
+│   │       └── .gitkeep
+│   ├── now
+│   │   ├── description.md
+│   │   ├── metadata.json
+│   │   └── prompt.md
 │   └── vision
 │       ├── brainstorming.md
 │       ├── constraints.md
 │       └── core_vision.md
-## Style constraints
-
-* keep wording plain, precise, and disciplined
-* no sales language
-* no emojis
-* no references to prior versions
-* no references to any specific product
-* no unnecessary abstraction jargon
-* no extra narrative sections beyond what is useful
-
-## Self-review requirements
-
-Before committing:
-
-1. inspect the actual full file tree
-2. ensure docs match the real structure
-3. ensure all path references are correct
-4. ensure only one priorities location exists
-5. ensure only one evidence surface exists
-6. ensure `project/now/` is an actual active-work layer
-7. ensure the root README contains a fully recursive and exact file tree
-8. ensure the repository remains aligned to the boring, one-tool-at-a-time v2 vision
-
-## Commit
-
-Commit with this exact message:
-
-refine v2 structure and enforce full repo visibility
-
-## Final output
-
-At the end, print only:
-
-* files modified
-* files created
-* summary of structural fixes
-* confirmation of commit
-* confirmation of push
+```

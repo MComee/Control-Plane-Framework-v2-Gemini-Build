@@ -1,28 +1,36 @@
 # Core Control Model
 
-This framework employs a three-layer model to operationalize AI-assisted software development, ensuring clarity, consistency, and control over the development process.
+## Layer 1 - Framework Self-Governance
 
-## Layer 1 — Framework Self-Governance
-Protects:
-*   Framework doctrine
-*   Routing rules (`docs/routing.md`)
-*   Protected paths (`framework/rules/protected-files.md`)
-*   Planning synchronization (`framework/rules/planning-sync.md`)
-*   Execution boundaries (`framework/rules/execution-boundaries.md`)
+Protects framework doctrine, routing rules, protected paths, planning synchronization, and execution boundaries.
 
-## Layer 2 — Single-Project Control
-Governs:
-*   `project/` directory
-*   `project/vision/` (core doctrine, constraints, brainstorming)
-*   `project/docs/` (features, task groups, tasks, priorities, roadmap, decisions, definition_of_done, execution_control)
-*   `project/now/` (active work state)
-*   `project/evidence/` (execution outcomes)
+Primary files:
+- `docs/routing.md`
+- `framework/rules/protected-files.md`
+- `framework/rules/planning-sync.md`
+- `framework/rules/execution-boundaries.md`
 
-## Layer 3 — Execution Guidance
-Guides external tools by:
-*   Defining what to read (`docs/routing.md`)
-*   Defining what may be changed (`project/now/metadata.json`'s `allowed_paths`)
-*   Defining what must not be changed (`project/now/metadata.json`'s `forbidden_paths`)
-*   Using `project/now/prompt.md` as the definitive handoff source.
+## Layer 2 - Single-Project Control
 
-This model ensures repository truth remains stable and AI tools work against a controlled, consistent state.
+Controls one project under `project/`.
+
+Governed surfaces:
+- `project/vision/`
+- `project/docs/features/`
+- `project/docs/task_groups/`
+- `project/docs/tasks/`
+- `project/docs/priorities/`
+- `project/now/`
+- `project/evidence/`
+
+## Layer 3 - Execution Guidance
+
+Guides one chosen tool at a time by defining:
+- what to read
+- what may change
+- what must not change
+- what must be validated
+
+Definitive handoff source: `project/now/prompt.md`.
+
+Control scope statement: this framework controls repository truth and execution alignment, not AI internals.

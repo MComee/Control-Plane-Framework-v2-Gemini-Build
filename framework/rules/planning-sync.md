@@ -1,16 +1,22 @@
 # Planning Synchronization
 
-All material planning changes must be reflected in the repository's truth files. Planning should not exist solely within chat conversations; it must be version-controlled.
+Planning is only valid when synchronized to repository files. Chat-only planning is non-compliant.
 
-**Synchronization Requirements:**
+## Required Synchronization Targets
 
-*   **Planning Sessions Must Update Repository Truth:** When planning activities lead to decisions about the project's vision, features, task groups, tasks, priorities, or active work, these decisions *must* be recorded in the appropriate repository files.
-*   **Affected Files Must Be Synchronized:** After any significant planning update, the relevant files must be staged and committed to ensure the repository accurately reflects the latest decisions. This includes updates to:
-    *   `project/vision/*`
-    *   `project/docs/features/*`
-    *   `project/docs/task_groups/*`
-    *   `project/docs/tasks/*`
-    *   `project/priorities/*`
-    *   `project/now/*`
+- `project/vision/*`
+- `project/docs/features/*`
+- `project/docs/task_groups/*`
+- `project/docs/tasks/*`
+- `project/docs/priorities/*`
+- `project/docs/roadmap.md`
+- `project/docs/decisions.md`
+- `project/docs/definition_of_done.md`
+- `project/docs/execution_control.md`
+- `project/now/*`
 
-This process ensures that all stakeholders, including AI tools and human developers, are working from a consistent and up-to-date understanding of the project's direction and current state.
+## Enforcement
+
+- If planning changes structure, priorities, or active work, update files in the same change set.
+- If tracked files are added, removed, moved, or renamed, update the root `README.md` recursive file tree in the same change set.
+- Do not treat intent as synchronized until repository paths and file contents reflect it.
